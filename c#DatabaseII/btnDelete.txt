@@ -1,0 +1,17 @@
+ private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ds.Tables[0].Rows[inc].Delete();
+                objConnect.UpdateDatabase(ds);
+                MaxRows = ds.Tables[0].Rows.Count;
+                inc--;
+
+                NavigateRecords();
+                MessageBox.Show("Record Updated");
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
+        }

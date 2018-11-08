@@ -1,0 +1,8 @@
+ private void btnCancel_Click(object sender, EventArgs e)
+        {
+            NavigateRecords();
+
+            btnCancel.Enabled = false;
+            btnSave.Enabled = false;
+            btnAddNew.Enabled = true;
+        }

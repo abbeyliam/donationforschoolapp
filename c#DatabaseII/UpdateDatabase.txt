@@ -1,0 +1,12 @@
+        public void UpdateDatabase(System.Data.DataSet ds)
+        {
+            System.Data.SqlClient.SqlConnection con = new System.Data.SqlClient.SqlConnection(strCon);
+
+            System.Data.SqlClient.SqlCommandBuilder cb = new System.Data.SqlClient.SqlCommandBuilder(da_1);
+            con.Open();
+            cb.DataAdapter.Fill(ds.Tables[0]);
+            cb.DataAdapter.Update(ds.Tables[0]);
+            ds.AcceptChanges();
+            con.Close();
+
+        }

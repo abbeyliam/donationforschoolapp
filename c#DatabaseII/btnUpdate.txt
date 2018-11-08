@@ -1,0 +1,21 @@
+ private void btnSave_Click(object sender, EventArgs e)
+        {
+            DataRow row = ds.Tables[0].Rows[inc];
+            row[1] = txtFirstName.Text;
+            row[2] = txtSurname.Text;
+            row[3] = txtJobTitle.Text;
+            row[4] = txtDepartment.Text;
+            try
+            {
+                objConnect.UpdateDatabase(ds);
+                MessageBox.Show("Record updated");
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.Message);
+
+            }
+           
+        }

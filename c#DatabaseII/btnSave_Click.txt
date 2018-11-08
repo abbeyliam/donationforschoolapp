@@ -1,0 +1,30 @@
+ private void btnSave_Click(object sender, EventArgs e)
+        {
+            DataRow row = ds.Tables[0].NewRow();
+            row[1] = txtFirstName.Text;
+            row[2] = txtSurname.Text;
+            row[3] = txtJobTitle.Text;
+            row[4] = txtDepartment.Text;
+
+            ds.Tables[0].Rows.Add(row);
+            try
+            {
+
+                objConnect.UpdateDatabase(ds);
+
+                MaxRows = MaxRows + 1;
+                inc = MaxRows - 1;
+
+                MessageBox.Show("Database updated");
+
+            }
+            catch (Exception err)
+            {
+
+                MessageBox.Show(err.Message);
+
+            }
+            btnCancel.Enabled = false;
+            btnSave.Enabled = false;
+            btnAddNew.Enabled = true;
+        }

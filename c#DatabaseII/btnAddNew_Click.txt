@@ -1,0 +1,10 @@
+  private void btnAddNew_Click(object sender, EventArgs e)
+        {
+            txtFirstName.Clear();
+            txtSurname.Clear();
+            txtJobTitle.Clear();
+            txtDepartment.Clear();
+            btnAddNew.Enabled = false;
+            btnSave.Enabled = true;
+            btnCancel.Enabled = true;
+        }
